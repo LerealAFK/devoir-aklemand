@@ -33,28 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (window.location.pathname.includes("morgen.html")) {
-        const button = document.querySelector(".changeMode");
-        const paragraph = document.querySelector(".morgenPara");
-
-        if (button) {
-            button.addEventListener("click", () => {
-                const originalText = `
-                    Am Morgen esse ich mein Frühstück. 
-                    Es gibt Müsli, Milch und Apfelsaft. 
-                    Hmmm, es ist gemütlich. 
-                    Um 10 Uhr spiele ich Computer, 
-                    weil es interessant und lustig ist. 
-                    Ich mag Computer. Ich spiele Minecraft. Es ist ein super Spiel!
-                `;
-
-                const activityList = `
-                    <ul>
-                        <li>Frühstück essen: Müsli, Milch, Apfelsaft</li>
-                        <li>Computer spielen</li>
-                        <li>Minecraft-Spiel erkunden</li>
-                    </ul>
-                `;
+    
 
                 if (button.textContent.includes("liste")) {
                     paragraph.innerHTML = activityList;
