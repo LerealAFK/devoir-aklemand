@@ -1,0 +1,176 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: linear-gradient(to right, blue, green);
+    margin: 0;
+    height: 100vh;
+}
+
+.startText {
+    text-align: center;
+    background: yellow;
+    color: blue;
+    border-radius: 165px;
+    padding: 5px;
+    width: 90%;
+    position: relative;
+    transform: translateX(200%); /* Commence hors de l'écran (à droite) */
+    transition: transform 1s ease; /* Transition fluide */
+}
+
+.morgenText {
+    text-align: center;
+    background: yellow;
+    color: blue;
+    border-radius: 165px;
+    padding: 5px;
+    width: 90%;
+    position: relative;
+    transform: translateX(-50%) rotate(0deg); /* Position initiale */
+    opacity: 0; /* Invisible au départ */
+    animation: subtleSpinIn 1s ease-out forwards; /* Animation fluide et rapide */
+}
+
+/* Animation subtile pour le texte morgenText */
+@keyframes subtleSpinIn {
+    0% {
+        transform: translateX(-200%) rotate(-30deg); /* Position initiale en dehors de l'écran */
+        opacity: 0; /* Complètement invisible */
+    }
+    50% {
+        transform: translateX(-20%) rotate(10deg); /* Légère rotation et presque visible */
+        opacity: 0.5; /* Semi-transparence */
+    }
+    100% {
+        transform: translateX(0) rotate(0deg); /* Position finale centrée et droite */
+        opacity: 1; /* Complètement visible */
+    }
+}
+
+.includText {
+    visibility: hidden;
+}
+
+
+
+
+button {
+    display: flex;
+    background: lightgreen;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transform: translateX(-200%); /* Commence hors de l'écran (à gauche) */
+    transition: transform 1s ease; /* Transition fluide */
+}
+
+
+
+.buttonStart a {
+    text-decoration: none;
+    color: black;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+img {
+    animation: shake 0.5s ease;
+}
+
+.morgenPara {
+    color: orange;
+    text-align: center;
+    opacity: 0; /* Invisible au départ */
+    transform: scale(0.8); /* Réduit le texte au départ */
+    transition: opacity 1s ease, transform 1s ease; /* Transition fluide */
+}
+
+.morgenPara.visible {
+    opacity: 1; /* Devient visible */
+    transform: scale(1); /* Restaure à taille normale */
+}
+
+.morgenPara.listMode {
+    opacity: 1; /* Devient visible */
+    transform: scale(1.2); /* Zoom léger */
+    transition: opacity 1s ease, transform 1s ease; /* Transition fluide */
+}
+
+
+
+
+
+.changeMode {
+    position: relative;
+    background: lightgreen;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0; /* Invisible au départ */
+    transform: translateY(100%); /* Positionné en bas, hors de l'écran */
+    animation: slideUp 1s ease-in-out forwards; /* Animation fluide */
+    animation-delay: 1s; /* Délai de 500ms avant de commencer l'animation */
+}
+
+/* Animation pour faire monter le bouton */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.animated-button {
+    background-color: #ff4b5c;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transform: translateY(100px); /* Initial position - offscreen */
+    opacity: 0; /* Initial state - invisible */
+    animation: buttonAppear 1s ease-out forwards; /* Animation when page loads */
+}
+
+@keyframes buttonAppear {
+    0% {
+        transform: translateY(100px); /* Start from below */
+        opacity: 0; /* Start invisible */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up slightly */
+        opacity: 0.7; /* Fade in partially */
+    }
+    100% {
+        transform: translateY(0); /* Final position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.nextPageA {
+    text-decoration: none;
+}
